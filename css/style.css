@@ -14,6 +14,9 @@ body {
     margin: 0;
     background: #e9e9e9;
 }
+
+/*// Header  //*/
+
 header {
     background:#2c3e50;
     width: 100%;
@@ -56,8 +59,37 @@ a {
     color: black;
     cursor: pointer;
 }
+.btn_burguer {
+    display:none;
+    padding: 10px;
+}
+/*//// Main ///////*/
+main {
+    background:#fff;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    flex: 1 1 60%;
+} 
+/*/// Aside  /////*/
+aside {
+    background:#f2f2f2;
+    padding: 20px;
+    /* Flex */
+    flex:1 1 30%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-start;
 
-/*/// Footer /// */
+}
+aside .widget {
+   background: #e9e9e9;
+   height: 150px;
+   margin: 10px;
+}
+/*/// Footer //// */
 
 footer {
     background: #2c3e50;
@@ -93,3 +125,4 @@ footer .social a {
     padding: 10px;
     display: inline-block;
 }
+
