@@ -1,0 +1,95 @@
+
+.container {
+    background: #ccc;
+    width: 90%;
+    max-width: 1500px;
+    margin: auto;
+
+    /*  Flex */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+body {
+    margin: 0;
+    background: #e9e9e9;
+}
+header {
+    background:#2c3e50;
+    width: 100%;
+    padding: 20px;
+
+    /* Flex */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+header nav {
+    overflow: hidden;
+    width: 50%;
+    /* Flex */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+}
+header nav a {
+    background: coral;
+    color: cornsilk;
+    text-align: center;
+    text-decoration:none;
+    padding: 10px;
+     /* flex */
+     flex-grow: 1 ;
+    
+}
+a:-webkit-any-link {
+    color: black;
+    cursor: pointer;
+}    
+a {
+    text-decoration: none;
+}
+:link {
+    color: black;
+    cursor: pointer;
+}
+
+/*/// Footer /// */
+
+footer {
+    background: #2c3e50;
+    width: 100%;
+    padding: 20px;
+    /* Flex */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+footer .links {
+    background: #c0392b;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+footer .links a {
+    flex-grow: 1;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+}
+footer .links a:hover {
+    background: #E74C3C;
+} 
+footer .social {
+    background: #e67e22;
+}
+footer .social a {
+    color:#fff;
+    text-decoration:none;
+    padding: 10px;
+    display: inline-block;
+}
