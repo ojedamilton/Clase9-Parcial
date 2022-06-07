@@ -76,4 +76,15 @@ window.onload = function () {
             error = true;            
         }
     }
+
+    /*         EVENTO SUBMIT           */
+    var form = document.getElementById("formulario");
+    form.addEventListener('submit', function (evento) {
+        error=false;
+        evento.preventDefault();
+        validateLetterOb(nombre,errorNombre);
+        validateLetterOb(apellido,errorApellido);
+        validateEmail();
+        validateEdad();
+    })    
 }    
