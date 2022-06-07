@@ -76,8 +76,96 @@ window.onload = function () {
             error = true;            
         }
     }
+     ////////////////////////
+    /// Validacion Pais  ///  Campo Requerido
+    ////////////////////////
+    let pais = document.getElementById('pais');
+    let errorPais = document.getElementById('errorPais');
+    // Focus Pais
+    pais.onfocus=function () {
+        pais.style.borderColor= "#ced4da"; 
+        errorPais.style.display='none';
+    } 
+    function validatePais(e) {
 
-    /*         EVENTO SUBMIT           */
+        if (pais.value == 0) {
+            pais.style.borderColor= "red";
+            errorPais.style.display='block';
+            errorPais.innerHTML='Debe seleccionar un pais';
+            error = true;   
+        }
+        
+    }
+
+    ///////////////////////
+    /// Validacion Sexo /// Campo Requerido
+    ///////////////////////
+
+    let sexo = document.querySelectorAll('[name="sexo[]"]');
+    let errorSexo = document.getElementById('errorSexo');
+    let CantCheck=0;
+    function validateSexo(e) {
+
+        for (let i = 0; i < sexo.length; i++) {
+            if (!sexo[i].checked){
+                CantCheck+=1;
+            };
+        }
+        if (CantCheck == sexo.length) {
+            errorSexo.style.display='block';
+            errorSexo.innerHTML='Debe seleccionar un sexo';
+            error = true;
+        }else{
+            errorSexo.style.display='none';
+        }
+    }
+
+    ////////////////////////////////
+    /// Validacion Temas Interes /// Campo Requerido
+    ////////////////////////////////
+
+    let tema = document.querySelectorAll('[name="interes[]"]');
+    let errorTema = document.getElementById('errorTema');
+    function validateTema(e) {    
+        let cantCheckTema = 0;
+        for (let i = 0; i < tema.length; i++) {
+            if (!tema[i].checked){
+                cantCheckTema+=1;
+            };
+        }
+        if (cantCheckTema == tema.length) {
+            errorTema.style.display='block';
+            errorTema.innerHTML='Debe seleccionar un Tema de Interes'
+            error = true;
+        }else{
+            errorTema.style.display='none';
+        }
+    }
+    
+     /////////////////////
+    ///   M O D A L   /// 
+    ////////////////////
+     // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    /* ////////  EVENTO SUBMIT  ///////// */
     var form = document.getElementById("formulario");
     form.addEventListener('submit', function (evento) {
         error=false;
@@ -86,5 +174,9 @@ window.onload = function () {
         validateLetterOb(apellido,errorApellido);
         validateEmail();
         validateEdad();
+        validatePais();
+        validateSexo();
+        validateTema();
+        if(!error) modal.style.display = "block";
     })    
 }    
